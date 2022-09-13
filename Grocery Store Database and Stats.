@@ -1,0 +1,21 @@
+CREATE TABLE mystore (id INTEGER PRIMARY KEY, item TEXT, gender TEXT, price INTEGER, quanity INTEGER );
+
+INSERT INTO mystore VALUES (1, "socks", "both", 2, 150);
+INSERT INTO mystore VALUES (2, "bra", "women", 5, 23);
+INSERT INTO mystore VALUES (3, "shoes", "both", 4, 56);
+INSERT INTO mystore VALUES (4, "leggings", "women", 5, 99);
+INSERT INTO mystore VALUES (5, "tshirt", "both", 5, 77);
+INSERT INTO mystore VALUES (6, "shorts", "both",7, 43);
+INSERT INTO mystore VALUES (7, "underwear", "women", 3, 74);
+INSERT INTO mystore VALUES (8, "gloves", "both", 2, 39);
+INSERT INTO mystore VALUES (9, "scarf", "both", 2, 88);
+INSERT INTO mystore VALUES (10, "boxers", "men", 4, 23);
+INSERT INTO mystore VALUES (11, "blouse", "women", 6, 19);
+INSERT INTO mystore VALUES (12, "earrings", "women", 8, 63);
+INSERT INTO mystore VALUES (13, "necklace", "women",10, 9);
+INSERT INTO mystore VALUES (14, "sandals", "both", 1, 87);
+INSERT INTO mystore VALUES (15, "dress", "women", 12, 52);
+SELECT * FROM mystore;
+
+SELECT * FROM mystore WHERE price < 7 ORDER BY gender;
+SELECT * FROM mystore WHERE quanity < 30 ORDER BY price;
