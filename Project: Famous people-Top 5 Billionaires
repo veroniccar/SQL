@@ -1,0 +1,34 @@
+CREATE TABLE billionaires (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+fullname TEXT,
+age INTEGER,
+country TEXT);
+
+INSERT INTO billionaires (fullname, age, country) VALUES ("Elon Musk ", 51, "USA");
+INSERT INTO billionaires (fullname, age, country) VALUES ("Bernard Arnault", 73, "France");
+INSERT INTO billionaires (fullname, age, country) VALUES ("Gautam Adani", 60, "India");
+INSERT INTO billionaires (fullname, age, country) VALUES ("Jeff Bezos", 58, "USA");
+INSERT INTO billionaires (fullname, age, country) VALUES ("Bill Gates", 66, "USA");
+
+CREATE TABLE wealth (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+billionaire_id INTEGER,
+net_worth TEXT,
+source_wealth TEXT);
+
+INSERT INTO wealth (billionaire_id, net_worth, source_wealth) VALUES (1, "271.4 billion", "Tesla, SpaceX");
+INSERT INTO wealth (billionaire_id, net_worth, source_wealth) VALUES (2, "155.7 billion", "LVMH");
+INSERT INTO wealth (billionaire_id, net_worth, source_wealth) VALUES(3, "152.4 billion", "infrastructure, commodities");
+INSERT INTO wealth (billionaire_id, net_worth, source_wealth) VALUES (4, "142.0 billion", "Amazon");
+INSERT INTO wealth (billionaire_id, net_worth, source_wealth) VALUES
+(5, "103.6 billion", "Microsoft");
+
+SELECT billionaires.fullname, billionaires.country, wealth.net_worth
+    FROM billionaires 
+    JOIN wealth 
+    ON billionaires.id = wealth.billionaire_id;
+    
+SELECT billionaires.fullname, wealth.source_wealth
+    FROM billionaires 
+    JOIN wealth 
+    ON billionaires.id = wealth.billionaire_id;
